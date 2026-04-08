@@ -1,14 +1,20 @@
 import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
 
+#load empty model
+clf = RandomForestClassifier(random_state=0)
+
+#Feature
 df = pd.read_csv("creditcard.csv")
+X  = df.iloc[:, :-1]
+
+#classes for feature
+y = df["Class"].values 
+
+#learn
+clf.fit(X,y)
+
+#...jetzt nur noch daten um zu predicten?
 
 
-"""
-hier mit holen wir uns für jeden Datensatz die Klassifizierung,
-ob es fraud ist oder nicht, damit das ML basierend auf den classes die features versteht:
-"""
-
-y = df["Class"].values
-print(type(y))
-print(y)
 
