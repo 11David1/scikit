@@ -14,8 +14,8 @@ y = df["Class"].values # -> nur die letze Spalte
 #data to test
 train_X, test_X, train_y, test_y = train_test_split(X,y, random_state=0)
 
-#learn
+#learn with the 80%
 clf.fit(train_X,train_y)
 
-#...jetzt nur noch daten um zu predicten?
+#takes the 20% and classifies them
 print(clf.predict(test_X))
